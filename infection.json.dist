@@ -1,0 +1,32 @@
+{
+    "timeout": 5,
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "logs": {
+        "text": "produce\/mutation-results.log",
+        "summary": "produce\/mutation-summary.log",
+        "perMutator": "produce\/mutation-per-mutator.md",
+        "badge": {
+            "branch": "master"
+        }
+    },
+    "mutators": {
+        "@default": true,
+        "DecrementInteger": {
+            "ignore": [
+                "NathanBurkett\\Mesa\\Output\\OutputStrategyException",
+                "NathanBurkett\\Mesa\Loader\\FileLoaderException"
+            ]
+        },
+        "OneZeroInteger": {
+            "ignore": [
+                "NathanBurkett\\Mesa\\Output\\OutputStrategyException",
+                "NathanBurkett\\Mesa\Loader\\FileLoaderException"
+            ]
+        }
+    },
+    "testFramework":"phpunit"
+}

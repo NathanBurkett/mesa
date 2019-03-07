@@ -1,0 +1,5 @@
+phpcs.xml
+phpmd.xml
+phpunit.xml
+
+vendor

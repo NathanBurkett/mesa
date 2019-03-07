@@ -1,0 +1,43 @@
+{
+  "name": "nathanburkett/mesa",
+  "description": "Table-Driven Data Interpretation",
+  "keywords": [
+    "table",
+    "tabular",
+    "mesa",
+    "phpunit",
+    "testcase",
+    "generator",
+    "generation"
+  ],
+  "type": "library",
+  "require": {
+    "php": "^7.1",
+    "symfony/yaml": "^4.2",
+    "ext-json": "*"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "NathanBurkett\\Mesa\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NathanBurkett\\Mesa\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "NathanBurkett",
+      "email": "nathan@nathanb.me"
+    }
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^0.11.1",
+    "phpmd/phpmd": "^2.6",
+    "squizlabs/php_codesniffer": "^3.4",
+    "infection/infection": "^0.9",
+    "phpunit/phpunit": "^7.5"
+  }
+}
