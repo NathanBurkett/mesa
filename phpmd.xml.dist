@@ -7,7 +7,7 @@
 
     <rule ref="rulesets/cleancode.xml/StaticAccess">
         <properties>
-                <property name="exceptions" value="NathanBurkett\Mesa\Loader\FileLoaderFactoryException,\Symfony\Component\Yaml\Yaml,\NathanBurkett\Mesa\Loader\LoaderFactory" />
+            <property name="exceptions" value="NathanBurkett\Mesa\Loader\LoaderFactoryException, \Symfony\Component\Yaml\Yaml,\NathanBurkett\Mesa\Loader\LoaderFactory, NathanBurkett\Mesa\Loader\File\FileLoaderException" />
         </properties>
     </rule>
 

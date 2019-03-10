@@ -13,12 +13,15 @@ build-template: &build-template
       - run:
           name: Run Tests
           command: |
-            make coverage-test \
-              mutation-test
+            make coverage-test
 
       - run:
           name: Enforce Code Standards
           command: make code-standards
+
+      - run:
+          name: Upload Coverage Report
+          command: bash <(curl -s https://codecov.io/bash) -f output/clover.xml
 
       - store_test_results:
           path: output

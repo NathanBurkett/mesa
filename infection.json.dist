@@ -6,25 +6,32 @@
         ]
     },
     "logs": {
-        "text": "produce\/mutation-results.log",
-        "summary": "produce\/mutation-summary.log",
-        "perMutator": "produce\/mutation-per-mutator.md",
+        "text": "output\/mutation-results.log",
+        "summary": "output\/mutation-summary.log",
+        "perMutator": "output\/mutation-per-mutator.md",
         "badge": {
             "branch": "master"
         }
     },
     "mutators": {
         "@default": true,
+        "ProtectedVisibility": {
+            "ignore": [
+                "NathanBurkett\\Mesa\\Loader\\LoaderFactory"
+            ]
+        },
         "DecrementInteger": {
             "ignore": [
                 "NathanBurkett\\Mesa\\Output\\OutputStrategyException",
-                "NathanBurkett\\Mesa\Loader\\FileLoaderException"
+                "NathanBurkett\\Mesa\\Loader\\File\\FileLoaderException",
+                "NathanBurkett\\Mesa\\Loader\\LoaderFactoryException"
             ]
         },
         "OneZeroInteger": {
             "ignore": [
                 "NathanBurkett\\Mesa\\Output\\OutputStrategyException",
-                "NathanBurkett\\Mesa\Loader\\FileLoaderException"
+                "NathanBurkett\\Mesa\\Loader\\File\\FileLoaderException",
+                "NathanBurkett\\Mesa\\Loader\\LoaderFactoryException"
             ]
         }
     },
