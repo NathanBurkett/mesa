@@ -11,6 +11,7 @@ class LoaderFactory implements LoaderFactoryInterface
 {
     /**
      * @var string
+     * @see http://php.net/manual/en/function.gettype.php
      */
     const TYPE_BOOLEAN = "boolean",
         TYPE_INTEGER = "integer",
@@ -32,37 +33,22 @@ class LoaderFactory implements LoaderFactoryInterface
     {
         switch (gettype($context)) {
             case static::TYPE_BOOLEAN:
-                $factory = static::getBooleanLoaderFactory();
-                break;
+                return static::getBooleanLoaderFactory()::create($context);
             case static::TYPE_INTEGER:
-                $factory = static::getIntegerLoaderFactory();
-                break;
+                return static::getIntegerLoaderFactory()::create($context);
             case static::TYPE_DOUBLE:
-                $factory = static::getDoubleLoaderFactory();
-                break;
+                return static::getDoubleLoaderFactory()::create($context);
             case static::TYPE_STRING:
-                $factory = static::getStringLoaderFactory();
-                break;
+                return static::getStringLoaderFactory()::create($context);
             case static::TYPE_ARRAY:
-                $factory = static::getArrayLoaderFactory();
-                break;
+                return static::getArrayLoaderFactory()::create($context);
             case static::TYPE_OBJECT:
-                $factory = static::getObjectLoaderFactory();
-                break;
+                return static::getObjectLoaderFactory()::create($context);
             case static::TYPE_RESOURCE:
-                $factory = static::getResourceLoaderFactory();
-                break;
+                return static::getResourceLoaderFactory()::create($context);
             case static::TYPE_NULL:
-                $factory = static::getNullLoaderFactory();
-                break;
-            case static::TYPE_UNKNOWN_TYPE:
-                $factory = static::getUnknownTypeLoaderFactory();
-                break;
-            default:
-                $factory = static::getUnknownTypeLoaderFactory();
+                return static::getNullLoaderFactory()::create($context);
         }
-
-        return $factory::create($context);
     }
 
     /**
@@ -143,15 +129,5 @@ class LoaderFactory implements LoaderFactoryInterface
     protected static function getNullLoaderFactory(): LoaderFactoryInterface
     {
         throw LoaderFactoryException::unimplementedTypeLoaderFactory(static::TYPE_NULL);
-    }
-
-    /**
-     * Get unknown type LoaderFactoryInterface.
-     *
-     * @return LoaderFactoryInterface
-     */
-    protected static function getUnknownTypeLoaderFactory(): LoaderFactoryInterface
-    {
-        throw LoaderFactoryException::unimplementedTypeLoaderFactory(static::TYPE_UNKNOWN_TYPE);
     }
 }

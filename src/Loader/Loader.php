@@ -8,7 +8,7 @@
 interface Loader
 {
     /**
-     * @return \Traversable
+     * @return iterable
      */
-    public function load(): \Traversable;
+    public function load(): iterable;
 }
