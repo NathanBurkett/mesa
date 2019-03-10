@@ -31,7 +31,7 @@ class OutputGenerator implements OutputStrategy
      */
     protected function handleIteration($index, $row, callable $setup): \Generator
     {
-        yield $index => $setup($row);
+        yield $index => $setup($row, $index);
     }
 
     /**
