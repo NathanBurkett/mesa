@@ -11,9 +11,9 @@ trait GeneratesTables
      * @param mixed $tableContext
      * @param callable|null $rowSetup
      *
-     * @return \Traversable
+     * @return iterable
      */
-    protected function generateTable($tableContext, callable $rowSetup = null): \Traversable
+    protected function generateTable($tableContext, callable $rowSetup = null): iterable
     {
         $loader = $this->getLoaderFactory()::create($tableContext);
 
