@@ -11,7 +11,7 @@ use NathanBurkett\Mesa\Loader\File\FileLoaderException;
 interface LoaderFactoryInterface
 {
     /**
-     * @param $context
+     * @param mixed $context
      *
      * @return Loader
      * @throws FileLoaderException
