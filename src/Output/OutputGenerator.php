@@ -10,12 +10,12 @@ class OutputGenerator implements OutputStrategy
     /**
      * Produce the table.
      *
-     * @param \Traversable $table
+     * @param iterable $table
      * @param callable|null $setup
      *
-     * @return \Traversable
+     * @return iterable
      */
-    public function produce(\Traversable $table, callable $setup = null): \Traversable
+    public function produce(iterable $table, callable $setup = null): iterable
     {
         foreach ($table as $index => $row) {
             yield from $this->handleIteration($index, $row, $setup ?? $this->getDefaultRowSetup());

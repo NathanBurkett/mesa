@@ -37,9 +37,9 @@ class TableBuilder
      *
      * @param callable|null $tableRowAffection
      *
-     * @return \Traversable
+     * @return iterable
      */
-    public function run(callable $tableRowAffection = null): \Traversable
+    public function run(callable $tableRowAffection = null): iterable
     {
         return $this->outputStrategy->produce($this->loader->load(), $tableRowAffection);
     }
