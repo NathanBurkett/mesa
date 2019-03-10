@@ -1,4 +1,4 @@
-<?php namespace NathanBurkett\Mesa\Tests\Loader\File;
+<?php namespace NathanBurkett\Mesa\Tests\Unit\Loader\File;
 
 use NathanBurkett\Mesa\Loader\File\FileLoaderException;
 use NathanBurkett\Mesa\Loader\File\FileLoaderFactory;

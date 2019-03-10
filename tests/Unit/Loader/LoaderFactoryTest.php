@@ -1,4 +1,4 @@
-<?php namespace NathanBurkett\Mesa\Tests\Loader;
+<?php namespace NathanBurkett\Mesa\Tests\Unit\Loader;
 
 use NathanBurkett\Mesa\Loader\Loader;
 use NathanBurkett\Mesa\Loader\LoaderFactory;

@@ -1,4 +1,4 @@
-<?php namespace NathanBurkett\Mesa\Tests\Output;
+<?php namespace NathanBurkett\Mesa\Tests\Unit\Output;
 
 use NathanBurkett\Mesa\Output\OutputGenerator;
 use PHPUnit\Framework\TestCase;
