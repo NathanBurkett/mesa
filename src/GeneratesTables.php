@@ -17,7 +17,9 @@ trait GeneratesTables
     {
         $loader = $this->getLoaderFactory()::create($tableContext);
 
-        return $this->getOutputStrategy()->produce($loader->load(), $rowSetup);
+        $builder = new TableBuilder($loader, $this->getOutputStrategy());
+
+        return $builder->run($rowSetup);
     }
 
     /**
