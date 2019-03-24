@@ -76,7 +76,7 @@ class FooClass
     
     public function run(): iterable
     {
-        $tableContext = __DIR__ . '/some/php/file.php';
+        $tableContext = __DIR__ . '/some/php/file.php'; // THIS IS WHERE $tableContext COMES FROM
 
         return $this->generateTable($tableContext, function(array $row, $index) {
             if ($index === 'two') {
@@ -95,7 +95,7 @@ In the above example, `$table['two']['name']` would equal `'baz'`.
 
 The current default behavior of `$tableContext` passed as the first parameter to `GeneratesTables::generateTable()` is intended to be an absolute path to a PHP or YAML file. Anything else and [`FileLoaderFactory`](src/Loader/File/FileLoaderFactory.php) will throw an exception.
 
-Other types can be interpreted by extending [`LoaderFactory`](src/Loader/LoaderFactory.php) and overridding any of the methods and then overriding the [`GeneratesTables::getLoaderFactory()`](src/GeneratesTables.php#L25-33)
+Other types can be interpreted by extending [`LoaderFactory`](src/Loader/LoaderFactory.php) and overridding any of the methods and then overriding the [`GeneratesTables::getLoaderFactory()`](src/GeneratesTables.php#L30)
 
 ```php
 <?php namespace Foo\Bar\Baz;
@@ -165,4 +165,4 @@ class FooClass
 
 In the above example, `$table['two']['name']` would equal `'baz'`.
 
-An alternate OutputStrategy can be used by overriding [`GeneratesTables::getOutputStrategy()`](src/GeneratesTables.php#L35-43)
+An alternate OutputStrategy can be used by overriding [`GeneratesTables::getOutputStrategy()`](src/GeneratesTables.php#L40)
